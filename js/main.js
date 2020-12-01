@@ -27,8 +27,7 @@ let removeButton = document.querySelector("#clear-item-btn")
 // create div for the output and icons
 function listLogic(){
      // select the input field and get the input value from the input
-     let taskInput = document.querySelector('#text-input')
-         taskInput = taskInput.value
+     var taskInput = document.querySelector('#text-input').value
     // ensure an emty input is not submitted
     if (taskInput.length === 0){
         header.before(warningDiv)
@@ -85,8 +84,9 @@ function listLogic(){
         outputDiv.appendChild(ul)
 
         // append the output to the form 
-        formDiv.appendChild(outputDiv)
-    }   taskInput = ''
+        formDiv.appendChild(outputDiv) 
+        document.querySelector('#text-input').value = ''
+    }  
 }
 
 // use key to interact with app
